@@ -93,11 +93,11 @@ impl Environment for NativeEnvironment {
         None
     }
 
-    async fn sleep(&self, duration: Duration) {
-        tokio::time::sleep(duration).await;
-    }
-
     fn is_dir(&self, root: &Path) -> bool {
         root.is_dir()
+    }
+
+    async fn sleep(&self, duration: Duration) {
+        tokio::time::sleep(duration).await;
     }
 }
