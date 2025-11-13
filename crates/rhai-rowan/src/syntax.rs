@@ -351,8 +351,7 @@ pub enum SyntaxKind {
 
     // endregion
 
-    // region: Nodes
-    // This region is generated from ungrammar, do not touch it!
+    // region: Nodes    // This region is generated from ungrammar, do not touch it!
     RHAI,
     STMT,
     ITEM,

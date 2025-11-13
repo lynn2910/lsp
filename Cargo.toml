@@ -1,6 +1,7 @@
 [workspace]
 members = ["crates/*", "fuzz"]
 exclude = ["crates/rhai-wasm"]
+resolver = "2"
 
 [profile.release]
 lto = true

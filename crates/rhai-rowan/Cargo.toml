@@ -17,10 +17,13 @@ strum = { version = "0.24.1", features = ["derive"] }
 [dev-dependencies]
 insta = "1.8.0"
 criterion = { version = "0.4.0", features = ["html_reports"] }
-pprof = { version = "0.10.1", features = ["flamegraph", "criterion"] }
+#pprof = { version = "0.10.1", features = ["flamegraph", "criterion"] }
 test-case = "2.1.0"
 tracing-subscriber = "0.3.11"
 rhai = { version = "1.8.0", features = ["debugging"] }
+
+[target.'cfg(not(target_os = "windows"))'.dev-dependencies]
+pprof = { version = "0.10.1", features = ["flamegraph", "criterion"] }
 
 [build-dependencies]
 cargo-emit = "0.2.1"
@@ -29,3 +32,6 @@ rhai-sourcegen = { path = "../rhai-sourcegen" }
 [[bench]]
 name = "parse"
 harness = false
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(fuzzing)'] }

@@ -25,5 +25,5 @@ anyhow = "1.0.62"
 [dev-dependencies]
 insta = "1.8.0"
 criterion = { version = "0.4", features = ["html_reports"] }
-pprof = { version = "0.10.1", features = ["flamegraph", "criterion"] }
+#pprof = { version = "0.10.1", features = ["flamegraph", "criterion"] }
 test-case = "2.1.0"
