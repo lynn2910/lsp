@@ -83,7 +83,7 @@ impl Normalize for Url {
     }
 }
 
-pub(crate) fn normalize_str(s: &str) -> Cow<str> {
+pub(crate) fn normalize_str(s: &'_ str) -> Cow<'_, str> {
     let percent_decoded = match percent_decode_str(s).decode_utf8().ok() {
         Some(s) => s,
         None => return s.into(),

@@ -16,7 +16,7 @@ pub enum InterpolatedSegment<'s> {
 
 #[must_use]
 #[allow(clippy::missing_panics_doc)]
-pub fn parse_interpolated(s: &str) -> Interpolated {
+pub fn parse_interpolated(s: &'_ str) -> Interpolated<'_> {
     let mut segments = Vec::new();
 
     let mut chars = s.char_indices().peekable();
